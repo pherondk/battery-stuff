@@ -7,7 +7,7 @@ BATTLVL=$(ioreg -r -l -n AppleHSBluetoothDevice | egrep '"BatteryPercent" = |^  
 
 if [[ $a == *"Keyboard"*  ]] && [[ $c == *"Trackpad"* ]]; then
 		BATTPERC=$(echo $a $b); echo $BATTPERC;
-elif [[ $a == *"Keyboard"* ]] && [[ $c == "" ]]; then
+elif [[ $a == *"Keyboard"* ]] && [[ -z $c ]]; then
 		BATTPERC=$(echo $a $b); echo $BATTPERC;
 elif [[ $a == *"Trackpad"* ]] && [[ $c == *"Keyboard"* ]]; then
 		BATTPERC=$(echo $c $d); echo $BATTPERC;
